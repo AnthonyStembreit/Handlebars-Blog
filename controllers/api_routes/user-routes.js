@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/User');
+const db = require('../../models/User');
+const User = db.User
 const passport = require('../../config/passport');
 
 //creates a new user

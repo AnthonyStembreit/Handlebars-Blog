@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const Comment = require('../models/Comment');
+const Comment = require('../../models/Comment');
 const passport = require('../../config/passport');
 //creates a new comment
 router.post("/", async (req, res) =>{
