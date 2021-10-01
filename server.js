@@ -2,7 +2,6 @@ const express = require('express');
 var session = require("express-session");
 var passport = require("./config/passport");
 const PORT = process.env.PORT || 3001;
-const db = require("./models");
 
 const sequelize = require('./config/connection/connection');
 const app = express();

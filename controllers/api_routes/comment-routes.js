@@ -17,7 +17,7 @@ router.get("/:postid",  async (req, res)=>{
     try {
         let postComments = await Comment.findAll({
             where: {
-                post_id: req.params.postid
+                postId: req.params.postid
             }
         });
         res.json(postComments)

@@ -18,7 +18,7 @@ router.get("/:userid", async (req, res)=>{
     try {
         let usersPost = await Post.findAll({
             where: {
-                user_id: req.params.userid
+                userId: req.params.userid
             }
         });
         res.json(usersPost)
