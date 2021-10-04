@@ -1,5 +1,6 @@
 <form>
     <input type="text" placeholder="title" {{#if edit}}value={{title}}{{/if}}/>
     <textarea type="text" placeholder="blog content" {{#if edit}}value={{description}}{{/if}}/>
+   <!--will need to add an edit value to the obj fed to handlebars -->
     <button>{{#if edit}}Save Edit{{else}}Create Post{{/if}}</button>
 </form>

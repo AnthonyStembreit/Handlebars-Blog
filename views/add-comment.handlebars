@@ -1,13 +1,17 @@
 <div class="card">
-   <header>
-   <h2>{{title}}</h2>
-   <!--returns a userid will have to make second call or do a join to get username-->
-   <p>{{username}}</p>
-   </header> 
+    <header>
+        <h2>{{title}}</h2>
+        <!--returns a userid will have to make second call or do a join to get username-->
+        <p>{{username}}</p>
+    </header>
     <p>{{description}}</p>
     <p>{{createdAt}}</p>
+
+    {{#each comments}}
+        {{> comment}}
+    {{/each}}
     <form>
-        <input type="text"/>
+        <input type="text" />
         <button>Add Comment</button>
     </form>
 </div>
