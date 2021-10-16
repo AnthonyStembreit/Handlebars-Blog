@@ -11,7 +11,10 @@
         {{> comment}}
     {{/each}}
     <form>
-        <input type="text" />
+        <input type="text" {{#unless loggedin }} disabled{{/unless}}/>
         <button>Add Comment</button>
     </form>
+    {{#if loggedin}}<button>Edit</button>{{/if}}
+    <!--will need to make this form display none until button clicked -->
+    {{> mutate-post-form edit=true}}
 </div>

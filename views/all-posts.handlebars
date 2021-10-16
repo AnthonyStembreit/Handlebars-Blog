@@ -1,5 +1,7 @@
 {{#each posts}}
     {{> post}}
 {{/each}}
-<!--will need to add a dashboard value to the obj fed to handlebars -->
-{{#if dashboard}}<button>Create New Post</button>{{/if}}
+
+{{#if profile}}<button>Create New Post</button>{{/if}}
+<!--will need to make this form display none until button clicked -->
+{{> mutate-post-form edit=false}}
