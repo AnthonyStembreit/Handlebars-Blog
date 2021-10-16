@@ -4,7 +4,7 @@ const Post = require('../../models/Post');
 const passport = require('../../config/passport');
 
 //creates a new post
-router.post("/",  async (req, res) =>{
+router.post("/", passport.authenticate('local'), async (req, res) =>{
     try {
         let newPost = await Post.Create(req.body);
         res.json(newPost)
@@ -14,7 +14,7 @@ router.post("/",  async (req, res) =>{
 })
 
 //gets all posts associated with a user
-router.get("/:userid", async (req, res)=>{
+router.get("/:userid", passport.authenticate('local'), async (req, res)=>{
     try {
         let usersPost = await Post.findAll({
             where: {
@@ -28,7 +28,7 @@ router.get("/:userid", async (req, res)=>{
 })
 
 //updates a post
-router.put("/:id", async (req, res)=>{
+router.put("/:id", passport.authenticate('local'), async (req, res)=>{
     try{
         let updatedPost = await Post.update(req.body, {
             where: {
@@ -42,7 +42,7 @@ router.put("/:id", async (req, res)=>{
 })
 
 //deletes a post
-router.delete("/:id",  async (req, res)=>{
+router.delete("/:id", passport.authenticate('local'), async (req, res)=>{
     try{
         Post.destroy({
             where:{

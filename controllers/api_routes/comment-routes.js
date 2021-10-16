@@ -3,7 +3,7 @@ const router = express.Router();
 const Comment = require('../../models/Comment');
 const passport = require('../../config/passport');
 //creates a new comment
-router.post("/", async (req, res) =>{
+router.post("/",  passport.authenticate('local'), async (req, res) =>{
     try {
         let newComment = await Comment.Create(req.body);
         res.json(newComment)
@@ -27,7 +27,7 @@ router.get("/:postid",  async (req, res)=>{
 })
 
 //updates a comment
-router.put("/:id",  async (req, res)=>{
+router.put("/:id", passport.authenticate('local'), async (req, res)=>{
     try{
         let updatedComment = await Comment.update(req.body, {
             where: {
@@ -41,7 +41,7 @@ router.put("/:id",  async (req, res)=>{
 })
 
 //deletes a comment
-router.delete("/:id",  async (req, res)=>{
+router.delete("/:id", passport.authenticate('local'), async (req, res)=>{
     try{
         Comment.destroy({
             where:{

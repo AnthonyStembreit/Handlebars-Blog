@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../../models');
-const passport = require('../../config/passport');
+const isAuthenticated = require("../../config/middleware/isAuthenticated");
 
-router.get("/", ()=>{
+router.get("/",  isAuthenticated, ()=>{
 //view all post logged in
 })
 
-router.get("/:userid", ()=>{
+router.get("/:userid",  isAuthenticated, ()=>{
 //view my post
 })
 
-router.get("/:postid", ()=>{
+router.get("/:postid", isAuthenticated, ()=>{
 //view single post logged in
 })
 
