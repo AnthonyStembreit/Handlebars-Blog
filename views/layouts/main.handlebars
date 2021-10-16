@@ -15,9 +15,22 @@
 	</div>
 	<div id="modal" class="hidden">
 		<!--signup needs to be defined somehow-->
-		{{#if signup}} {{>sign-up}} {{else}} {{>log-in}}{{/if}}
+		<form>
+			{{#if signup}}
+			<label>username</label>
+			<input type="text" />
+			{{/if}}
+			<label>email</label>
+			<input type="email" />
+			<label>password</label>
+			<input type="password" />
+			<button type="submit">Login</button>
+			{{#unless singup}}
+			<button>Sign-Up</button>
+			{{/unless}}
+		</form>
 	</div>
-	
+
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/index.js"></script>
 	{{{ body }}}
