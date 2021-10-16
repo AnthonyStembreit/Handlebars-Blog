@@ -1,4 +1,4 @@
-<form>
+<form class="hidden">
     <input type="text" placeholder="title" {{#if edit}}value={{title}}{{/if}}/>
     <textarea type="text" placeholder="blog content" {{#if edit}}value={{description}}{{/if}}/>
     <button>{{#if edit}}Save Edit{{else}}Create Post{{/if}}</button>

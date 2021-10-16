@@ -7,6 +7,7 @@ const sequelize = require('./config/connection/connection');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.static("public"));
 
 var exphbs = require("express-handlebars");
 

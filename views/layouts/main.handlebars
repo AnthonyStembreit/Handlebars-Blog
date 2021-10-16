@@ -3,7 +3,7 @@
 
 <head>
 	<title>Blog</title>
-	<link rel="stylesheet" href="/styles/style.css" />
+	<link rel="stylesheet" href="/css/style.css" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -13,12 +13,14 @@
 		<a href="/main">Dashboard</a>
 		<a>Log-in</a>
 	</div>
-	{{{ body }}}
 	<div id="modal" class="hidden">
-		<!--login/signup paritals need to be pulled in somehow-->
+		<!--signup needs to be defined somehow-->
+		{{#if signup}} {{>sign-up}} {{else}} {{>log-in}}{{/if}}
 	</div>
+	
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/index.js"></script>
+	{{{ body }}}
 </body>
 
 </html>
